@@ -8,10 +8,10 @@ import quest.culture.partner.source.tourism.domain.model.entity.Destination;
 import java.util.List;
 
 public interface DestinationService {
-    List<Destination> getAll();
-    Page<Destination> getAll(Pageable pageable);
+/*    List<Destination> getAll();
+    Page<Destination> getAll(Pageable pageable);*/
     Destination getById(Long destinationId);
     Destination create(Destination destination);
-    Destination update(Long id, Destination destination);
-    ResponseEntity<?> delete(Long destinationId);
+/*    Destination update(Long id, Destination destination);
+    ResponseEntity<?> delete(Long destinationId);*/
 }
