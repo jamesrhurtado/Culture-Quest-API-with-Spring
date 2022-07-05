@@ -1,5 +1,6 @@
 package quest.culture.partner.source.tourism.service;
 
+import org.springframework.stereotype.Service;
 import quest.culture.partner.source.shared.exception.ResourceNotFoundException;
 import quest.culture.partner.source.shared.exception.ResourceValidationException;
 import quest.culture.partner.source.tourism.domain.model.entity.Destination;
@@ -11,6 +12,7 @@ import javax.validation.Validator;
 import java.util.Optional;
 import java.util.Set;
 
+@Service
 public class DestinationServiceImpl implements DestinationService {
 
     private static final String ENTITY = "Destination";
