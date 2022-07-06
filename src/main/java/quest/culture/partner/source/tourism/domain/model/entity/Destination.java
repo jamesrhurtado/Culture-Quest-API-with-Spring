@@ -4,7 +4,8 @@ import lombok.*;
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
-
+import java.util.HashSet;
+import java.util.Set;
 
 
 @Getter
@@ -32,4 +33,8 @@ public class Destination {
     private String country;
 
     private String photoUrl;
+
+    // Relationships
+    @OneToMany(mappedBy = "destination", cascade = CascadeType.ALL)
+    protected Set<Place> places = new HashSet<>();
 }

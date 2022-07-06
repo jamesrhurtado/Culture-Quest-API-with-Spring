@@ -5,7 +5,6 @@ import quest.culture.partner.source.tourism.domain.model.enums.HeritageFactor;
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
 
 @Getter
 @Setter
@@ -24,17 +23,15 @@ public class Place {
     private String name;
 
     @NotNull
-    @NotBlank
     private Long altitude;
 
     @NotNull
-    @NotBlank
     private Long latitude;
 
     @NotNull
-    @NotBlank
     private Long longitude;
 
+    @Enumerated(EnumType.STRING)
     private HeritageFactor heritage;
 
     // Relationships

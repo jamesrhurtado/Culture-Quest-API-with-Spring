@@ -1,5 +1,6 @@
 package quest.culture.partner.source.tourism.service;
 
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import quest.culture.partner.source.shared.exception.ResourceNotFoundException;
 import quest.culture.partner.source.shared.exception.ResourceValidationException;
@@ -41,5 +42,12 @@ public class DestinationServiceImpl implements DestinationService {
         if(destinationWithName.isPresent() && destinationWithCountry.isPresent())
             throw new ResourceValidationException(ENTITY, "A destination with that combination of name and country already exists.");
         return destinationRepository.save(destination);
+    }
+    @Override
+    public ResponseEntity<?> delete(Long destinationId) {
+        return destinationRepository.findById(destinationId).map(destination -> {
+            destinationRepository.delete(destination);
+            return ResponseEntity.ok().build();
+        }).orElseThrow(() -> new ResourceNotFoundException(ENTITY, destinationId));
     }
 }

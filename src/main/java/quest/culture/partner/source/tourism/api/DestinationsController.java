@@ -5,6 +5,7 @@ import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
+import org.springframework.http.ResponseEntity;
 import quest.culture.partner.source.tourism.domain.service.DestinationService;
 import quest.culture.partner.source.tourism.mapping.DestinationMapper;
 
@@ -39,5 +40,9 @@ public class DestinationsController {
     @PostMapping
     public DestinationResource createDestination(@RequestBody CreateDestinationResource resource) {
         return mapper.toResource(destinationService.create(mapper.toModel(resource)));
+    }
+    @DeleteMapping("{destinationId}")
+    public ResponseEntity<?> deleteSkill(@PathVariable Long destinationId) {
+        return destinationService.delete(destinationId);
     }
 }

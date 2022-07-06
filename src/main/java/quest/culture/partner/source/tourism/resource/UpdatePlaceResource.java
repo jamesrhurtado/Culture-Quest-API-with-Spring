@@ -13,5 +13,14 @@ public class UpdatePlaceResource {
     @NotBlank
     private String name;
 
-    //other attributes cannot be updated for now
+    @NotNull
+    private Long altitude;
+
+    @NotNull
+    private Long latitude;
+
+    @NotNull
+    private Long longitude;
+
+    private String heritage;
 }

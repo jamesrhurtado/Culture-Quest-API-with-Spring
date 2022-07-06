@@ -12,6 +12,6 @@ public interface DestinationService {
     Page<Destination> getAll(Pageable pageable);*/
     Destination getById(Long destinationId);
     Destination create(Destination destination);
-/*    Destination update(Long id, Destination destination);
-    ResponseEntity<?> delete(Long destinationId);*/
+    //Destination update(Long id, Destination destination);
+    ResponseEntity<?> delete(Long destinationId);
 }

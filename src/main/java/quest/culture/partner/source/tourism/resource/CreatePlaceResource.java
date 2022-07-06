@@ -16,20 +16,13 @@ public class CreatePlaceResource {
     private String name;
 
     @NotNull
-    @NotBlank
     private Long altitude;
 
     @NotNull
-    @NotBlank
     private Long latitude;
 
     @NotNull
-    @NotBlank
     private Long longitude;
 
-    @NotNull
-    @NotBlank
     private String heritage;
-
-
 }
