@@ -13,8 +13,8 @@ public class MappingConfiguration {
         return new EnhancedModelMapper();
     }
     @Bean
-    public DestinationMapper skillMapper() { return new DestinationMapper(); }
+    public DestinationMapper destinationMapper() { return new DestinationMapper(); }
 
     @Bean
-    public PlaceMapper criterionMapper() { return new PlaceMapper(); }
+    public PlaceMapper placeMapper() { return new PlaceMapper(); }
 }
