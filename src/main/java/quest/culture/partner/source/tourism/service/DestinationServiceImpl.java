@@ -36,10 +36,10 @@ public class DestinationServiceImpl implements DestinationService {
         if(!violations.isEmpty())
             throw new ResourceValidationException(ENTITY, violations);
 
-        Optional<Destination> destinationWithName = destinationRepository.findByName(destination.getName());
-        Optional<Destination> destinationWithCountry = destinationRepository.findByCountry(destination.getCountry());
+        Destination destinationWithName = destinationRepository.findByName(destination.getName());
+        Destination destinationWithCountry = destinationRepository.findByCountry(destination.getCountry());
 
-        if(destinationWithName.isPresent() && destinationWithCountry.isPresent())
+        if(destinationWithName!= null && destinationWithCountry!=null)
             throw new ResourceValidationException(ENTITY, "A destination with that combination of name and country already exists.");
         return destinationRepository.save(destination);
     }

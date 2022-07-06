@@ -35,6 +35,10 @@ public class Place {
     private HeritageFactor heritage;
 
     // Relationships
+
+/*  You shouldn't use CascadeType.ALL on @ManyToOne since entity state transitions should propagate
+    from parent entities to child ones, not the other way around.
+    The @ManyToOne side is always the Child association since it maps the underlying Foreign Key column.*/
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "destination_id", nullable = false)
     private Destination destination;

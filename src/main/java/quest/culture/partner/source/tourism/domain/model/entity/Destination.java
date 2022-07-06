@@ -35,6 +35,8 @@ public class Destination {
     private String photoUrl;
 
     // Relationships
+    /*The CascadeType.ALL is implemented in the @OneToMany side, which should also use the mappedBy attribute
+    since it's the most efficient one-to-many table relationship mapping.*/
     @OneToMany(mappedBy = "destination", cascade = CascadeType.ALL)
     protected Set<Place> places = new HashSet<>();
 }
